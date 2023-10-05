@@ -1,4 +1,4 @@
-# TeamCity docker-compose
+# TeamCity-Space JetBrains Stack
 
 Starts TeamCity in docker-compose with several servers of different roles (Ubuntu-based).
 
@@ -23,4 +23,21 @@ After creating a user, visit ["Agents -> Unauthorized"](http://localhost:8111/ag
 
 See http://localhost:8111/admin/admin.html?item=nodesConfiguration for nodes configuration.
 
+## Space
 
+Open your Space On-Premises instance in a browser. The default URL is [http://127.0.0.1:8084](http://127.0.0.1:8084). The default administrator username is admin, the password is admin.
+
+Space components are accessible on the following URLs:
+
+- [http://127.0.0.1:8084](http://127.0.0.1:8084): Space user interface.
+- [http://127.0.0.1:8080](http://127.0.0.1:8080): VCS API.
+- [ssh://127.0.0.1:2222](ssh://127.0.0.1:2222): VCS SSH.
+- [http://127.0.0.1:8390](http://127.0.0.1:8390): Packages API.
+
+Perform post-installation administration activities:
+
+- [Activate your Space On-Premises instance](https://www.jetbrains.com/help/space/administration-of-space-on-premises.html#getting-a-space-product-license).
+- If you want to use Space on mobile clients, [configure push notifications](https://www.jetbrains.com/help/space/administration-of-space-on-premises.html#configuring-push-notifications-for-mobile-clients).
+- If you want to use Space Automation (CI/CD), [configure self-hosted Automation workers](https://www.jetbrains.com/help/space/run-steps-in-external-workers.html). Currently, Space On-Premises doesn't support cloud Automation workers.
+- If you want to use your Space instance in production, [perform additional configuration](https://www.jetbrains.com/help/space/configure-space-for-docker-compose-production-environment.html): make your instance network-accessible and enable the mail server.
+- If you decide to use your own object storage instead of the default one, [make sure to change its CORS policy](https://www.jetbrains.com/help/space/configure-space-for-docker-compose-production-environment.html#custom-storage-only-enable-downloads-in-space-packages) to enable downloads in the Space Packages UI.
