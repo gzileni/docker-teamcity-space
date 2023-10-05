@@ -7,6 +7,8 @@
 
 DBSTATUS=1
 ERRCODE=1
+SAPASSWORD=!T3amC1ty
+
 i=0
 
 while [[ $DBSTATUS -ne 0 ]] && [[ $i -lt 60 ]] && [[ $ERRCODE -ne 0 ]]; do
