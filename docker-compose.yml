@@ -32,9 +32,9 @@ services:
     image: nginx:1.19
     profiles: ["all", "teamcity", "space"]
     ports:
-      - 8222:8222
+        - 8222:8222
     volumes:
-      - ./nginx:/etc/nginx/conf.d
+        - ./nginx:/etc/nginx/conf.d
     networks:
         - "frontend"
         - "backend-apps"
