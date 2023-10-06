@@ -12,7 +12,13 @@ stack-space:
 	docker-compose -f ./docker-compose.yml --profile space rm
 	docker-compose -f ./docker-compose.yml --profile space up --remove-orphans
 
+stack-dev:
+	docker-compose -f ./docker-compose.yml --profile dev down
+	docker-compose -f ./docker-compose.yml --profile dev rm
+	docker-compose -f ./docker-compose.yml --profile dev up --remove-orphans
+
 stack:
 	docker-compose -f ./docker-compose.yml --profile all down
 	docker-compose -f ./docker-compose.yml --profile all rm
 	docker-compose -f ./docker-compose.yml --profile all up --remove-orphans
+

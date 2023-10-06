@@ -39,7 +39,7 @@ services:
     teamcity-server:
         image: jetbrains/teamcity-server
         container_name: teamcity-server
-        profiles: ["all", "teamcity"]
+        profiles: ["all", "teamcity", "dev"]
         ports:
             - ${TEAMCITY_PORT}:8111
         volumes:

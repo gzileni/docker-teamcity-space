@@ -5,23 +5,24 @@ Starts TeamCity in docker-compose with several servers of different roles (Ubunt
 Requires at least 4Gb of RAM in the docker engine.
 
 - Uses Postgres DB (`psql -p5433 -hlocalhost -Utest -dbuildserver`, password `test`)
-- Starts 2 servers: one primary, one secondary. 
+- Starts 2 servers: one primary, one secondary.
 - And, two build agents
 
 For details on volumes, created folders, logs see [docker-compose.yml](./docker-compose.yml) file.
 
 ## To start
 
-    make build
-    make stack-teamcity
-    make stack-teamcity-nodes
-    make stack-teamcity-ubuntu
+    make build                  // if you build your sql server image 
+    make stack-teamcity-dev     // The internal database suits evaluation purposes only and is not intended for production. 
+    make stack-teamcity         // with Sql Server
+    make stack-teamcity-nodes   // with nodes
+    make stack-teamcity-ubuntu  // on Linux Ubuntu 
 
-Next, open http://localhost:8111 for the initial setup.
+Next, open [http://localhost:8111](http://localhost:8111) for the initial setup.
 
 After creating a user, visit ["Agents -> Unauthorized"](http://localhost:8111/agents.html?tab=unauthorizedAgents) to authorize the build agent.
 
-See http://localhost:8111/admin/admin.html?item=nodesConfiguration for nodes configuration.
+See [http://localhost:8111/admin/admin.html?item=nodesConfiguration](http://localhost:8111/admin/admin.html?item=nodesConfiguration) for nodes configuration.
 
 ## Space
 
