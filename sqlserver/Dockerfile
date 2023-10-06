@@ -9,4 +9,4 @@ COPY sqlserver/configure-db.sh .
 COPY sqlserver/entrypoint.sh .
 COPY sqlserver/setup.sql .
 
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/usr/config/entrypoint.sh"]
